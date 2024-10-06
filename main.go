@@ -1,8 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"golangPractise/variable"
+)
 
 func main() {
-	fmt.Println("Hello World")
-
+	variablePractice.Start()
 }

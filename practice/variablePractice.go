@@ -1,7 +1,11 @@
-package variablePractice
+package practice
 
 import "fmt"
 
+// 宣告方式 var 變數名稱 型別 ＝ 值
+var name string = "Koli"
+
 func Start() {
-	fmt.Println("變數")
+	var person string = "cute"
+	fmt.Println(name, person)
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golangPractise/variable"
+	variablePractice "golangPractise/practice"
 )
 
 func main() {

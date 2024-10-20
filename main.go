@@ -1,9 +1,11 @@
 package main
 
 import (
-	variablePractice "golangPractise/practice"
+	"golangPractise/practice"
 )
 
 func main() {
-	variablePractice.Start()
+	practice.StartVariablePractice()
+	practice.StartOperatorsPractice()
+
 }

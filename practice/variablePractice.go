@@ -22,7 +22,7 @@ var (
 	omitUpdateTime = time.Now()
 )
 
-func Start() {
+func StartVariablePractice() {
 	declarePractice()
 	omitPractice()
 	shotDeclarePractice()

@@ -6,6 +6,6 @@ import (
 
 func main() {
 	practice.StartVariablePractice()
-	practice.StartOperatorsPractice()
+	practice.StartPointersPractice()
 
 }

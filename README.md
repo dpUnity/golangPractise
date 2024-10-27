@@ -124,7 +124,11 @@ var name,age,isFemale = "Pao",32,false
 name,age,isFemale = "Koli",31,true
 ```
 
+### 作用域
 
+* 當全域變數和區域變數同名時，呼叫該名稱只會叫到區域變數的
+* 完全沒辦法叫到全域變數的
+* 要叫全域變數的只能另外開方法取得
 
 
 

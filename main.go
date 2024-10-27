@@ -7,5 +7,5 @@ import (
 func main() {
 	practice.StartVariablePractice()
 	practice.StartPointersPractice()
-
+	practice.StartIfPractice()
 }

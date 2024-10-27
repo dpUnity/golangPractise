@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Go Program",
+        "type": "go",
+        "request": "launch",
+        "mode": "auto",       // 可以是 auto、debug 或 test
+        "program": "${workspaceFolder}/main.go"  // 或者指定你的 main.go 路徑
+      }
+    ]
+  }

@@ -168,3 +168,18 @@ name,age,isFemale = "Koli",31,true
 ```go
 變數 := *指標變數
 ```
+
+### 常數與列舉（enum）
+
+* 常數的用法就只是把var改成const而已，其他規則都一樣
+* go並沒有enum，直接用const來代替，只是可以用iota來協助宣告，ＥＸ：
+	```go
+	const (
+		None = iota, // 0
+		Empty				 // 1
+		Normal			 // 2
+		Medium			 // 3
+		High				 // 4
+		Full				 // 5
+	)
+	```

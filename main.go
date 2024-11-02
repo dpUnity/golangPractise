@@ -9,4 +9,5 @@ func main() {
 	practice.StartPointersPractice()
 	practice.StartIfPractice()
 	practice.StartSwitchPractice()
+	practice.StartRunePractice()
 }

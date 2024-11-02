@@ -188,6 +188,8 @@ name,age,isFemale = "Koli",31,true
 	)
 	```
 
+
+
 ## 各種判斷式和迴圈
 
 ### IF
@@ -249,12 +251,14 @@ name,age,isFemale = "Koli",31,true
 		程式碼區間
 	}
 	```
+	
 * 什麼都不寫就是C#的wile(true)
 	```go
 	for {
 		//就是無窮迴圈
 	}
 	```
+	
 * 只寫判斷是就是一般C#的wile
 	```go
 	a := 2
@@ -264,6 +268,7 @@ name,age,isFemale = "Koli",31,true
 	```
 
 * 搭配len可取得陣列或是切片的長度來跑for，就像C#的array.Length一樣
+
 * 搭配range可以拿到任何集合的key、value上
 	```go
 	test := map[string]string 
@@ -271,3 +276,47 @@ name,age,isFemale = "Koli",31,true
 	```
 	> value不接就不要寫
 	> key不接就寫＿
+
+
+
+## 	型別們
+|型別|功能|備註|
+|-|-|-|
+|bool|就是true/false||
+|int|有負數數字|大小長度取決於電腦是32還是64位元|
+|int8|有負數數字|8位元|
+|int16|有負數數字|16位元|
+|int32|有負數數字|32位元|
+|int64|有負數數字|64位元|
+|uint|單純正數|大小長度取決於電腦是32還是64位|
+|uint8|單純正數|8位元其實就是byte|
+|uint16|單純正數|16位元|
+|uint32|單純正數|32位元|
+|uint64|單純正數|64位元|
+|byte|單純正數|8位元，也等於uint8|
+|float32|浮點數|32位元|
+|float64|浮點數|64位元|
+|string|就是字串|用`設值會是原始字串，不吃\n等。用"就會吃\n|
+
+### 越界繞回
+
+* go在發生溢味時，會出現越界繞回的動作，意思就是直接回到最小值，EX：
+	```go
+	var a byte = 255
+	a += 1 //a會變成0
+	```
+
+* 要解決可以用math/big的套件
+
+### rune型別
+* uint32的別稱，同時可以拿來處理UTF-8的文字格式，不然用一般string來處理像是中文一樣的文字會印不出來，但是轉乘rune就可以，EX:
+	```go
+	name := "張可麗"
+	temp := []rune(name)
+	for i := 0;i < len(temp);i++{
+		//因為是rune所以要轉型
+		fmt.Println(string(temp[i])) //這樣才回印出中文
+	}
+	```
+
+* 上面的範例如果直接用range來取得字串每個值，會自動轉成rune

@@ -240,6 +240,34 @@ name,age,isFemale = "Koli",31,true
 	> * 要注意用複雜判斷式的時後，switch後面就不能擺要“判斷的值”，只能塞“宣告變數”或是不寫任何東西
 	>
 	> * 宣告後面一定要接;
-	
-* 
 
+### For迴圈
+
+* 一般使用方式和C#一樣
+	```go
+	for 宣告值;判斷式;結束敘述{
+		程式碼區間
+	}
+	```
+* 什麼都不寫就是C#的wile(true)
+	```go
+	for {
+		//就是無窮迴圈
+	}
+	```
+* 只寫判斷是就是一般C#的wile
+	```go
+	a := 2
+	for a < 1024 {
+		a *= 2
+	}
+	```
+
+* 搭配len可取得陣列或是切片的長度來跑for，就像C#的array.Length一樣
+* 搭配range可以拿到任何集合的key、value上
+	```go
+	test := map[string]string 
+	for key,value := range(test)
+	```
+	> value不接就不要寫
+	> key不接就寫＿

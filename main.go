@@ -8,4 +8,5 @@ func main() {
 	practice.StartVariablePractice()
 	practice.StartPointersPractice()
 	practice.StartIfPractice()
+	practice.StartSwitchPractice()
 }

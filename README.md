@@ -134,11 +134,15 @@ name,age,isFemale = "Koli",31,true
 
 ## 運算符號
 
-算術運算符（＋-8/%）和比較運算符（=、!、<、>）用法都跟Ｃ＃一樣
+算術運算符（＋-*/%）和比較運算符（=、!、<、>）用法都跟Ｃ＃一樣
 
 
 
 ## 指標
+
+### 對應練習腳本
+
+pointersPractice
 
 ### 注意事項
 
@@ -194,6 +198,7 @@ name,age,isFemale = "Koli",31,true
 
 ### IF
 
+* 練習腳本：ifStatementPractice
 * 宣告方式
 	```go
 	if 各種回傳boolean的東西 {
@@ -211,6 +216,7 @@ name,age,isFemale = "Koli",31,true
 
 ### switch
 
+* 練習腳本：switchStatementPractice
 * 不用break
 
 * 也可以先賦予值再寫判斷
@@ -314,7 +320,10 @@ name,age,isFemale = "Koli",31,true
 * ""括住的字串會顯示轉譯過的內容，意思就是\n才會換行
 
 ### rune型別
+* 練習腳本：runePractice
+	
 * uint32的別稱，同時可以拿來處理UTF-8的文字格式，不然用一般string來處理像是中文一樣的文字會印不出來，但是轉乘rune就可以，EX:
+	
 	```go
 	name := "張可麗"
 	temp := []rune(name)
@@ -323,5 +332,45 @@ name,age,isFemale = "Koli",31,true
 		fmt.Println(string(temp[i])) //這樣才回印出中文
 	}
 	```
-
+	
 * 上面的範例如果直接用range來取得字串每個值，會自動轉成rune
+
+
+
+## 集合們
+
+### Array
+
+#### 練習腳本
+
+arrayPractice
+
+#### 宣告方式
+
+* 基本宣告：[長度]型別
+
+  ``` go
+  var myArray [10]int
+  ```
+
+  > 長度一定要帶，不然會變切片
+
+* 附帶初始值宣告：[長度]型別{初始值}
+  ```go
+  var myArray = [10]int{0,1,2,3,4,5,6,7,8,9} //賦予初始值一定要在=後面
+  ```
+
+* 利用初始值長度決定陣列長度宣告：[...]型別{初始值}
+  ```go
+  var myArray = [...]{1,2,3} //相當於宣告一個長度3的陣列
+  ```
+  
+* 宣告時用索引鍵附值：[長度]型別{索引值：初始值}
+	```go
+	var myArray = [10]int{0,3:1,6:9}
+	```
+  
+#### 注意事項
+* 兩個陣列一定要長度和型別一樣才能比較，不然會直接跳錯
+* 其餘陣列用法與TS和C#相同 
+* 其餘取值與賦予值得方式一樣

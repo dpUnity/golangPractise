@@ -10,4 +10,5 @@ func main() {
 	practice.StartIfPractice()
 	practice.StartSwitchPractice()
 	practice.StartRunePractice()
+	practice.StartArrayPractice()
 }

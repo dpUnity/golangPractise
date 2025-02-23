@@ -85,6 +85,7 @@ func getFamily() (string, int, time.Time) {
 ### 短宣告注意事項
 
 * 只能在方法內用喔！
+* 一定要賦予預設值
 
 ### var單行多重宣告
 
@@ -362,7 +363,7 @@ arrayPractice
 
 * 利用初始值長度決定陣列長度宣告：[...]型別{初始值}
   ```go
-  var myArray = [...]{1,2,3} //相當於宣告一個長度3的陣列
+  var myArray = [...]int{1,2,3} //相當於宣告一個長度3的陣列
   ```
   
 * 宣告時用索引鍵附值：[長度]型別{索引值：初始值}
@@ -374,3 +375,61 @@ arrayPractice
 * 兩個陣列一定要長度和型別一樣才能比較，不然會直接跳錯
 * 其餘陣列用法與TS和C#相同 
 * 其餘取值與賦予值得方式一樣
+
+
+
+### 切片（slice）
+
+#### 練習腳本
+
+slicePractice
+
+#### 宣告方式
+
+[]型別
+```go
+var mySlice []int
+```
+
+#### 新增元素的方式
+
+* 利用append方式塞值，append會返回一個新的切片
+
+* 新增單一元素：切片 = append(切片,元素)
+	```go
+	var mySlice []int
+	mySlice = append(mySlice,1)
+	```
+* 一次新增多個元素：切片 = append(切片,元素1,元素2,...)
+	```go
+	var mySlice []int
+	mySlice = append(mySlice,2,6,7)
+	```
+* 直接把另一個切片塞進一個切片：切片 = append(切片,切片2...)
+	```go
+	var mySlice []int
+	var mySlice2 []int
+	
+	mySlice = append(mySlice,1,2,3,4)
+	mySlice2 = append(mySlice2,mySlice...)
+	```
+	
+
+#### 注意事項
+
+* 切片只是陣列的包裝，本質還是陣列
+* 經過包裝後切片可隨意更改陣列的長度，就像是讓陣列有List的功能一樣
+* 因為只是包裝，所以記憶體是指向原本的陣列
+
+
+
+## 額外小知識
+
+* strings.Joins可以把切片組合成一組字串，使用方式：strings.Joins(切片,每個元素中間要插入的字元)
+* import "os" 可以利用os.Args抓到程式執行時於run後面輸入的訊息，但是會連腳本的路徑一起印出來。
+	```go
+	//go run . this is test
+	func testFunc(){
+		fmt.Printf(strings.Joins(os.Args,""))
+	}
+	```

@@ -229,7 +229,7 @@ pointersPractice
 	}
 	```
 
-* 可把所有判斷是塞在一個case裡面，這樣會吃同一個程式碼區間，就像C#連續多個case再接一個break
+* 可把所有判斷式塞在一個case裡面，這樣會吃同一個程式碼區間，就像C#連續多個case再接一個break
 	```go
 	a := 0
 	switch a {
@@ -266,7 +266,7 @@ pointersPractice
 	}
 	```
 	
-* 只寫判斷是就是一般C#的wile
+* 只寫判斷式就是一般C#的wile
 	```go
 	a := 2
 	for a < 1024 {
@@ -307,7 +307,7 @@ pointersPractice
 
 ### 越界繞回
 
-* go在發生溢味時，會出現越界繞回的動作，意思就是直接回到最小值，EX：
+* go在發生溢位時，會出現越界繞回的動作，意思就是直接回到最小值，EX：
 	```go
 	var a byte = 255
 	a += 1 //a會變成0
